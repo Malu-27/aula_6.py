@@ -1,0 +1,46 @@
+#funções 
+def saudar(nome): #DEFINI A FUNÇÂO
+    #O NOME ENTRE () É O PARÂMETRO DA FUNÇÃO "ESPAÇO RESERVADO"
+    print(f"Ola!{nome} seja bem vindo!")
+    #PEDIMOS O DADO PARA O USUARIO E GUARDAMOS NA VARIÁVEL 
+    usuario = input("digite seu nome")
+    #passamos a variável para dentro da função
+    #saudar(usuario) 
+
+    def calcular_media(n1, n2, n3):
+        soma = n1 + n2 + n3
+        resultado = soma /3
+        return resultado
+    
+    """nota1 = float(input("digite sua primeira nota"))
+    nota2 = float(input("digite sua segunda nota"))
+    nota3 = float(input("digite sua terceira nota"))
+
+     media_final= calcular_media(nota1, nota2, nota3)
+    print(f"sua media final é: {media_final:.2f}")"""
+
+    #funções compostas 
+    """def aplicar_desconto(valor):
+        return valor * 0.9 #tira 10%
+    
+    def adicionar_taxa_entrega(valor):
+        return valor + 12.00
+    preco_base = float(input("digite o preco do produto: R$"))
+    preço_com_desconto = aplicar_desconto(preço_base)
+    preco_final = adicionar_taxa_entrega(preco_com_desconto)
+    print(f"valor com desconto:R${preco_com_desconto:.2f}")
+    print(f"total a pagar (com frete):R${preco_final:.2f}")"""
+
+    #função recursiva 
+
+     def descobrir_posicao(pessoa):
+    if pessoa == 1:
+        return 1 
+    else:
+        #caso recursivo
+        print(f"perguntando para a pessoa da frente (posicao{pessoa -1})")
+posicao_da_frente = descobrir_posicao(pessoa-1)
+return posicao_da_frente +1 
+minha_estimativa = int(input(f"quantas pessoas voce acha que estao na sua frente?"))
+resultado = descobrir_posicao(minha_estimativa +1)
+print(f"confirmado voce é o numero {resultado} na fila!")

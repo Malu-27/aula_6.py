@@ -1,0 +1,46 @@
+"""#arquivos no python
+# %%writefile          funcao nativa do py
+#1. o nome do arquivo (nome_do_arquivo.txt, .csv, etc)
+#2. o modo : "w" vem de write (escrita/escrever)
+arquivo = open("meu_primeiro_arquivo.txt", "w")
+# o metodo .write() escreve o texto dentro do arquivo
+arquivo.write("hello word!\n Estou aprendendo e manipulando arquivos")
+
+arquivo.close()"""
+
+
+'''# modo "r" vem de read (ler/leitura)
+arquivo = open("meu_primeiro_arquivo.txt","r")
+# metodo .read() le o conteudo inteiro e guarda em uma variavel
+conteudo = arquivo.read
+print(conteudo)
+#se tentarmos ler denovo começa do final sem nada
+#como se fosse um dedo lendo uma linha e parou no final
+
+
+print(f"tentando ler denovo:{arquivo.read()}")
+# para ler denovo, usamos .seek(0), para levar o dedo de volta para o inicio(indice 0)
+arquivo.seek(0)
+print("lendo o arquivo apos resetar o cursor")
+print(arquivo.read())
+
+arquivo.close()'''
+
+#modo 'a' vem de append (anexar/ adicionar)
+# ele coloca o cursor direto no final do texto que ja existe 
+with open("meu_primeiro_arquivo.txt","a") as arquivo:
+ arquivo.write("\n essa parte do texto foi adicionada depois")
+
+"""open('nome','modo') abre o arquivo
+read() le todo o conteudo como uma grande string
+readline() le somente uma linha por vez
+readlines() le o arquivo e transforma cada um em um item de lista
+write("texto") escreve o texto no arquivo
+close() fecha o arquivo e libera memoria
+seel(0) volta aler o codigo do começo"""
+
+# estrutura: with open(nome, modo) as alias:
+
+with open("lista_compras.txt", "w") as f:
+ f.write("pao\nleite\ncafe")
+ #NAO PRECISA DE F.CLOSE() MUITO MAIS SEGURO, GARANTE QUE O ARQUIVO FECHE E NAO CORRE O RISCO DE CORROMPER
